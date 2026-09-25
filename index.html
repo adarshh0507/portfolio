@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adarsh Singh | Data Science & AI/ML | Tech & Startup Enthusiast</title>
+  <meta name="description" content="Portfolio of Adarsh Singh — First-Year B.Tech Student specializing in Data Science & Artificial Intelligence / Machine Learning, CMO @ WYNKO, and Tech Builder.">
+  <meta name="keywords" content="Adarsh Singh, Data Science, Artificial Intelligence, Machine Learning, WYNKO, CMO, B.Tech, Portfolio, Python, Tech Founder">
+  <meta name="author" content="Adarsh Singh">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Adarsh Singh | Data Science & AI/ML | Tech & Startup Enthusiast">
+  <meta property="og:description" content="Building skills, creating projects, and turning ideas into real-world solutions.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            space: {
+              950: '#030712',
+              900: '#050814',
+              850: '#080d21',
+              800: '#0f172a',
+            },
+            cyan: {
+              350: '#38bdf8',
+              450: '#06b6d4',
+            }
+          },
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#050814] text-slate-100 antialiased selection:bg-cyan-500/20 selection:text-cyan-300 relative min-h-screen">
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Ambient Light Orbs -->
+  <div class="bg-mesh-glow glow-orb-1"></div>
+  <div class="bg-mesh-glow glow-orb-2"></div>
+  <div class="bg-mesh-glow glow-orb-3"></div>
+
+  <!-- Interactive Particles Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION BAR
+       ========================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-40 px-4 sm:px-6 lg:px-8 py-3 transition-all duration-300" id="main-navbar">
+    <div class="max-w-7xl mx-auto flex items-center justify-between glass-navbar px-5 py-3 rounded-2xl border border-white/10">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-2 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-400 to-indigo-600 flex items-center justify-center font-heading font-bold text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          AS
+        </div>
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-base sm:text-lg tracking-tight group-hover:text-cyan-300 transition-colors">
+            Adarsh Singh
+          </span>
+          <span class="text-[10px] font-mono text-cyan-400/80 -mt-1 tracking-wider uppercase">Data Science & AI/ML</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300" aria-label="Main Navigation">
+        <a href="#about" class="nav-link hover:text-cyan-400 transition-colors py-1">About</a>
+        <a href="#projects" class="nav-link hover:text-cyan-400 transition-colors py-1">Featured Work</a>
+        <a href="#skills" class="nav-link hover:text-cyan-400 transition-colors py-1">Skills</a>
+        <a href="#journey" class="nav-link hover:text-cyan-400 transition-colors py-1">Journey</a>
+        <a href="#building" class="nav-link hover:text-cyan-400 transition-colors py-1 flex items-center gap-1.5">
+          <span>Building</span>
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400 pulse-beacon"></span>
+        </a>
+        <a href="#achievements" class="nav-link hover:text-cyan-400 transition-colors py-1">Highlights</a>
+        <a href="#contact" class="nav-link hover:text-cyan-400 transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Action Button & Mobile Menu Toggle -->
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium btn-primary">
+          <i data-lucide="send" class="w-3.5 h-3.5"></i>
+          <span>Let's Talk</span>
+        </a>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/5 border border-white/5 transition-colors" aria-label="Toggle mobile menu" aria-expanded="false">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Overlay -->
+    <div id="mobile-menu" class="hidden lg:hidden mt-2 max-w-7xl mx-auto glass-panel rounded-2xl p-5 border border-white/10 flex flex-col gap-4 text-slate-200">
+      <a href="#about" class="flex items-center justify-between py-2 border-b border-white/5 hover:text-cyan-300">
+        <span>About Me</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+      </a>
+      <a href="#projects" class="flex items-center justify-between py-2 border-b border-white/5 hover:text-cyan-300">
+        <span>Featured Projects</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+      </a>
+      <a href="#skills" class="flex items-center justify-between py-2 border-b border-white/5 hover:text-cyan-300">
+        <span>Skills & Technologies</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+      </a>
+      <a href="#journey" class="flex items-center justify-between py-2 border-b border-white/5 hover:text-cyan-300">
+        <span>My Journey</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+      </a>
+      <a href="#building" class="flex items-center justify-between py-2 border-b border-white/5 hover:text-cyan-300">
+        <span class="flex items-center gap-2">
+          <span>Currently Building (WYNKO)</span>
+          <span class="px-2 py-0.5 text-[10px] rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Active</span>
+        </span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+      </a>
+      <a href="#achievements" class="flex items-center justify-between py-2 border-b border-white/5 hover:text-cyan-300">
+        <span>Achievements & Highlights</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+      </a>
+      <a href="#contact" class="flex items-center justify-between py-2 hover:text-cyan-300">
+        <span>Contact Me</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+      </a>
+
+      <div class="pt-2 flex items-center justify-between">
+        <a href="https://www.linkedin.com/in/adarsh-singh-a04066251" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-cyan-400 hover:underline">
+          <i data-lucide="linkedin" class="w-4 h-4"></i>
+          <span>LinkedIn Profile</span>
+        </a>
+        <a href="#contact" class="px-4 py-2 rounded-xl text-xs font-semibold btn-primary text-center">
+          Get In Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section id="hero" class="relative min-h-screen flex items-center pt-28 pb-16 lg:py-0 px-4 sm:px-6 lg:px-8 overflow-hidden z-10">
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- Left Column: Main Hero Content -->
+      <div class="lg:col-span-7 flex flex-col items-start gap-6 text-left">
+        
+        <!-- Status Pill -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-cyan-500/30 text-xs sm:text-sm text-slate-300 backdrop-blur-md shadow-lg shadow-cyan-500/5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-beacon"></span>
+          <span class="font-medium">First-Year B.Tech in Data Science & AI/ML</span>
+          <span class="text-slate-500">•</span>
+          <span class="text-cyan-300">CMO @ WYNKO</span>
+        </div>
+
+        <!-- Name & Title -->
+        <div class="space-y-3">
+          <h1 class="text-4xl sm:text-6xl xl:text-7xl font-bold tracking-tight font-heading leading-[1.1]">
+            Adarsh <span class="text-gradient animate-shimmer">Singh</span>
+          </h1>
+          <p class="text-lg sm:text-2xl font-medium text-cyan-400/90 font-heading">
+            B.Tech Student <span class="text-slate-500 font-normal">|</span> Data Science & AI/ML <span class="text-slate-500 font-normal">|</span> Tech & Startup Enthusiast
+          </p>
+        </div>
+
+        <!-- Quote / Short Introduction -->
+        <div class="relative pl-5 py-2 border-l-2 border-gradient border-cyan-400/80 bg-white/[0.02] rounded-r-xl max-w-2xl">
+          <p class="text-base sm:text-lg text-slate-300 italic font-light leading-relaxed">
+            «“Building skills, creating projects, and turning ideas into real-world solutions.”»
+          </p>
+          <span class="block mt-1 text-xs text-slate-500 font-mono tracking-wide uppercase">
+            — Personal Philosophy & Engineering Drive
+          </span>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
+          <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-medium text-sm sm:text-base btn-primary group">
+            <span>View My Work</span>
+            <i data-lucide="arrow-down-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform"></i>
+          </a>
+          <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-medium text-sm sm:text-base btn-secondary group">
+            <span>Let's Connect</span>
+            <i data-lucide="message-square" class="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform"></i>
+          </a>
+        </div>
+
+        <!-- Profile Icons & Social Links Strip -->
+        <div class="pt-4 flex flex-wrap items-center gap-3">
+          <span class="text-xs font-mono text-slate-500 mr-2 uppercase tracking-wider">Connect:</span>
+          
+          <!-- LinkedIn Link (Given by user) -->
+          <a href="https://www.linkedin.com/in/adarsh-singh-a04066251" target="_blank" rel="noopener noreferrer" class="tag-pill flex items-center gap-2 hover:border-cyan-400 group" title="LinkedIn Profile">
+            <i data-lucide="linkedin" class="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform"></i>
+            <span class="font-medium text-xs">LinkedIn</span>
+          </a>
+
+          <!-- GitHub Link -->
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="tag-pill flex items-center gap-2 hover:border-cyan-400 group" title="GitHub Repository">
+            <i data-lucide="github" class="w-4 h-4 text-violet-400 group-hover:scale-110 transition-transform"></i>
+            <span class="font-medium text-xs">GitHub</span>
+          </a>
+
+          <!-- Instagram Link -->
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="tag-pill flex items-center gap-2 hover:border-cyan-400 group" title="Instagram Profile">
+            <i data-lucide="instagram" class="w-4 h-4 text-pink-400 group-hover:scale-110 transition-transform"></i>
+            <span class="font-medium text-xs">Instagram</span>
+          </a>
+
+          <!-- Email Quick Link -->
+          <a href="mailto:adarsh.singh.tech@gmail.com" class="tag-pill flex items-center gap-2 hover:border-cyan-400 group" title="Direct Email">
+            <i data-lucide="mail" class="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform"></i>
+            <span class="font-medium text-xs">Email</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Holographic Tech Card -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="w-full max-w-md glass-panel rounded-3xl p-6 sm:p-7 relative border border-white/10 shadow-2xl shadow-cyan-950/40">
+          
+          <!-- Holographic Top Bar -->
+          <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+            </div>
+            <div class="text-[11px] font-mono text-cyan-400/90 flex items-center gap-1.5">
+              <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+              <span>adarsh-dev-environment: active</span>
+            </div>
+          </div>
+
+          <!-- Profile Badge Visual -->
+          <div class="flex items-center gap-4 mb-6">
+            <div class="relative w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-purple-600 p-[2px] shadow-lg shadow-cyan-500/20">
+              <div class="w-full h-full rounded-[14px] bg-slate-900 flex items-center justify-center font-heading font-black text-2xl text-white">
+                AS
+              </div>
+              <span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 border-2 border-slate-900 flex items-center justify-center">
+                <i data-lucide="check" class="w-3 h-3 text-white"></i>
+              </span>
+            </div>
+            <div>
+              <h2 class="font-heading font-bold text-lg text-white">Adarsh Singh</h2>
+              <p class="text-xs text-slate-400 font-mono">B.Tech Undergrad • 1st Year</p>
+              <div class="flex items-center gap-1.5 text-xs text-cyan-400 mt-1">
+                <i data-lucide="map-pin" class="w-3 h-3"></i>
+                <span>India • Open to Global Collabs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Metrics Grid -->
+          <div class="grid grid-cols-2 gap-3 mb-6">
+            <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5">
+              <div class="text-[11px] text-slate-400 font-mono uppercase">Specialization</div>
+              <div class="text-sm font-semibold text-slate-200 mt-0.5">Data Science & AI/ML</div>
+            </div>
+            <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5">
+              <div class="text-[11px] text-slate-400 font-mono uppercase">Venture Role</div>
+              <div class="text-sm font-semibold text-cyan-300 mt-0.5">CMO @ WYNKO</div>
+            </div>
+            <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5">
+              <div class="text-[11px] text-slate-400 font-mono uppercase">Core Tooling</div>
+              <div class="text-sm font-semibold text-slate-200 mt-0.5">Python & Machine Learning</div>
+            </div>
+            <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5">
+              <div class="text-[11px] text-slate-400 font-mono uppercase">Mindset</div>
+              <div class="text-sm font-semibold text-violet-300 mt-0.5">Build • Scale • Innovate</div>
+            </div>
+          </div>
+
+          <!-- Live Activity Snippet -->
+          <div class="p-3.5 rounded-xl bg-cyan-950/20 border border-cyan-500/20 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-cyan-400 pulse-beacon"></div>
+              <div class="text-xs">
+                <span class="text-slate-300 font-medium">Currently Building:</span>
+                <span class="text-cyan-300 font-semibold ml-1">WYNKO Platform</span>
+              </div>
+            </div>
+            <a href="#building" class="text-xs text-slate-400 hover:text-cyan-300 flex items-center gap-1 font-mono transition-colors">
+              <span>Inspect</span>
+              <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT ME SECTION
+       ========================================================================== -->
+  <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-mono mb-3">
+          <i data-lucide="user" class="w-3.5 h-3.5"></i>
+          <span>WHO I AM</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-bold font-heading tracking-tight">
+          Engineering The Future With <span class="text-gradient">Data, AI & Startups</span>
+        </h2>
+        <p class="mt-4 text-slate-400 text-base sm:text-lg leading-relaxed">
+          I don't wait for graduation to start building. As a first-year B.Tech undergraduate, I blend rigorous algorithmic thinking with hands-on startup execution and creative growth.
+        </p>
+      </div>
+
+      <!-- Main Biography & Story Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
+        
+        <!-- Left: Deep Dive Text -->
+        <div class="lg:col-span-7 glass-panel rounded-3xl p-7 sm:p-9 border border-white/10 space-y-5 reveal-on-scroll">
+          <h3 class="text-2xl font-bold font-heading text-white flex items-center gap-2.5">
+            <span class="text-gradient">Beyond the Classroom:</span> The Builder's Mindset
+          </h3>
+          
+          <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+            Hello! I'm <strong class="text-cyan-300 font-semibold">Adarsh Singh</strong>, currently in my first year pursuing a Bachelor of Technology with a dedicated specialization in <strong class="text-white">Data Science & Artificial Intelligence / Machine Learning</strong>. From an early stage, I became fascinated by how raw data and intelligent algorithms can transform messy real-world challenges into structured, high-leverage products.
+          </p>
+
+          <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+            What sets my approach apart is the fusion of <strong class="text-violet-300">technical analytical depth</strong> and <strong class="text-cyan-300">growth-driven product building</strong>. Beyond writing Python code, training predictive models, and dissecting data structures, I serve as the <strong class="text-white">Chief Marketing Officer (CMO) at WYNKO</strong>. In this role, I bridge technology with customer empathy, spearheading product positioning, go-to-market strategies, and user experience.
+          </p>
+
+          <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+            Whether I'm experimenting with neural network architectures, designing high-converting pitch visuals in Canva, or collaborating with fellow student builders, my goal is consistent: <span class="text-cyan-300 font-medium">turn curious ideas into functional, beautifully engineered digital solutions.</span>
+          </p>
+
+          <!-- Skill Badges Quick Row -->
+          <div class="pt-2 flex flex-wrap gap-2">
+            <span class="tag-pill">Pythonic Data Science</span>
+            <span class="tag-pill">AI/ML Algorithms</span>
+            <span class="tag-pill">Startup Growth & CMO</span>
+            <span class="tag-pill">Product Strategy</span>
+            <span class="tag-pill">Visual Storytelling</span>
+          </div>
+        </div>
+
+        <!-- Right: 4 Personal Highlight Pillars -->
+        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <!-- Pillar 1 -->
+          <div class="glass-panel p-5 rounded-2xl border border-white/10 hover:border-cyan-400/40 transition-all reveal-on-scroll group">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-300 mb-3 group-hover:scale-110 transition-transform">
+              <span class="text-xl">🎓</span>
+            </div>
+            <h4 class="font-heading font-semibold text-white text-base">First-Year B.Tech</h4>
+            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              Mastering foundations in Data Science & AI/ML, discrete math, and algorithmic problem-solving.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="glass-panel p-5 rounded-2xl border border-white/10 hover:border-violet-400/40 transition-all reveal-on-scroll group">
+            <div class="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-300 mb-3 group-hover:scale-110 transition-transform">
+              <span class="text-xl">🤖</span>
+            </div>
+            <h4 class="font-heading font-semibold text-white text-base">AI/ML & Data Science</h4>
+            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              Hands-on with predictive modeling, exploratory data analysis, and modern AI toolchains.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="glass-panel p-5 rounded-2xl border border-white/10 hover:border-emerald-400/40 transition-all reveal-on-scroll group">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-300 mb-3 group-hover:scale-110 transition-transform">
+              <span class="text-xl">🚀</span>
+            </div>
+            <h4 class="font-heading font-semibold text-white text-base">Startup & Products</h4>
+            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              CMO @ WYNKO — leading brand development, student community loops, and growth marketing.
+            </p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="glass-panel p-5 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all reveal-on-scroll group">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-300 mb-3 group-hover:scale-110 transition-transform">
+              <span class="text-xl">💡</span>
+            </div>
+            <h4 class="font-heading font-semibold text-white text-base">Creative & Tech</h4>
+            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              Canva design wizard, pitch presentation creator, and digital marketing strategist.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Quick Animated Stats Container -->
+      <div id="stats-container" class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 sm:p-8 rounded-3xl glass-panel border border-white/10 reveal-on-scroll">
+        <div class="text-center p-3">
+          <div class="text-3xl sm:text-4xl font-bold font-heading text-gradient stat-number" data-target="1" data-suffix="st">0</div>
+          <div class="text-xs text-slate-400 font-mono mt-1 uppercase tracking-wider">Year Undergrad</div>
+        </div>
+        <div class="text-center p-3 border-l border-white/10">
+          <div class="text-3xl sm:text-4xl font-bold font-heading text-cyan-400 stat-number" data-target="6" data-suffix="+">0</div>
+          <div class="text-xs text-slate-400 font-mono mt-1 uppercase tracking-wider">Projects & Builds</div>
+        </div>
+        <div class="text-center p-3 border-l border-white/10">
+          <div class="text-3xl sm:text-4xl font-bold font-heading text-violet-400 stat-number" data-target="1" data-suffix=" Active">0</div>
+          <div class="text-xs text-slate-400 font-mono mt-1 uppercase tracking-wider">Startup (WYNKO CMO)</div>
+        </div>
+        <div class="text-center p-3 border-l border-white/10">
+          <div class="text-3xl sm:text-4xl font-bold font-heading text-emerald-400 stat-number" data-target="100" data-suffix="%">0</div>
+          <div class="text-xs text-slate-400 font-mono mt-1 uppercase tracking-wider">Curiosity & Passion</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FEATURED PROJECTS SECTION
+       ========================================================================== -->
+  <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 reveal-on-scroll">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-mono mb-3">
+            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+            <span>PORTFOLIO SHOWCASE</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-bold font-heading tracking-tight">
+            Featured <span class="text-gradient">Projects & Ventures</span>
+          </h2>
+          <p class="mt-3 text-slate-400 text-base max-w-xl">
+            A selection of technical experiments, AI pipelines, and the flagship student study venture I am actively co-building.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl glass-panel border border-white/10 self-start md:self-auto">
+          <button class="project-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all bg-cyan-500/20 text-cyan-300 border border-cyan-500/40" data-filter="all">
+            All Projects
+          </button>
+          <button class="project-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all bg-white/5 text-slate-400 border border-white/10 hover:text-slate-200" data-filter="startup">
+            Startups & Products
+          </button>
+          <button class="project-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all bg-white/5 text-slate-400 border border-white/10 hover:text-slate-200" data-filter="ai-ml">
+            AI & Machine Learning
+          </button>
+          <button class="project-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all bg-white/5 text-slate-400 border border-white/10 hover:text-slate-200" data-filter="web">
+            Web & Tools
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- ==============================================
+             FLAGSHIP PROJECT CARD: WYNKO (Spans 12 Columns)
+             ============================================== -->
+        <div class="lg:col-span-12 glow-card-featured rounded-3xl p-6 sm:p-10 relative overflow-hidden project-card reveal-on-scroll" data-category="startup">
+          
+          <!-- Background Glow Effect inside card -->
+          <div class="absolute -top-24 -right-24 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            
+            <!-- Left Info -->
+            <div class="lg:col-span-7 space-y-6">
+              
+              <!-- Badges -->
+              <div class="flex flex-wrap items-center gap-2.5">
+                <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-medium flex items-center gap-1.5">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                  <span>Flagship Startup</span>
+                </span>
+                <span class="px-3 py-1 rounded-full bg-violet-500/20 text-violet-300 border border-violet-500/30 text-xs font-medium flex items-center gap-1.5">
+                  <i data-lucide="badge-check" class="w-3.5 h-3.5"></i>
+                  <span>Role: CMO @ WYNKO</span>
+                </span>
+                <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-medium flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-amber-400 pulse-beacon"></span>
+                  <span>In Active Development</span>
+                </span>
+              </div>
+
+              <!-- Title & Tagline -->
+              <div>
+                <h3 class="text-3xl sm:text-4xl font-extrabold font-heading text-white tracking-tight flex items-center gap-3">
+                  <span>WYNKO</span>
+                  <span class="text-slate-500 text-xl font-normal">—</span>
+                  <span class="text-gradient text-xl sm:text-2xl font-semibold">Focus • Study • Together</span>
+                </h3>
+                <p class="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+                  A futuristic study platform engineered to make modern studying more focused, social, structured, and rewarding. Built specifically to eliminate student procrastination and study isolation through gamified focus loops and intelligent friction.
+                </p>
+              </div>
+
+              <!-- Feature Pills Grid -->
+              <div class="space-y-2">
+                <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Core Features Built Into WYNKO:</div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                  <div class="p-2.5 rounded-xl bg-slate-900/60 border border-white/5 flex items-center gap-2">
+                    <i data-lucide="timer" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                    <span class="text-xs font-medium text-slate-200">Focus Sessions</span>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-900/60 border border-white/5 flex items-center gap-2">
+                    <i data-lucide="shield-alert" class="w-4 h-4 text-rose-400 shrink-0"></i>
+                    <span class="text-xs font-medium text-slate-200">App Blocking</span>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-900/60 border border-white/5 flex items-center gap-2">
+                    <i data-lucide="users" class="w-4 h-4 text-violet-400 shrink-0"></i>
+                    <span class="text-xs font-medium text-slate-200">Group Study</span>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-900/60 border border-white/5 flex items-center gap-2">
+                    <i data-lucide="target" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                    <span class="text-xs font-medium text-slate-200">Study Challenges</span>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-900/60 border border-white/5 flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-4 h-4 text-blue-400 shrink-0"></i>
+                    <span class="text-xs font-medium text-slate-200">Study Communities</span>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-900/60 border border-white/5 flex items-center gap-2">
+                    <i data-lucide="coins" class="w-4 h-4 text-amber-400 shrink-0"></i>
+                    <span class="text-xs font-medium text-amber-300">WYNKOINS Rewards</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- My Role Details -->
+              <div class="p-3.5 rounded-2xl bg-cyan-950/20 border border-cyan-500/20 flex items-start gap-3">
+                <i data-lucide="megaphone" class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5"></i>
+                <div class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <strong class="text-cyan-300">My Responsibility as CMO:</strong> Directing brand narrative, crafting visual identity & social presence, designing early student onboarding flows, and driving pre-launch waitlist growth across colleges.
+                </div>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <button data-open-modal="modal-wynko" class="px-5 py-2.5 rounded-xl btn-primary text-xs sm:text-sm font-semibold flex items-center gap-2">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                  <span>View Project Details</span>
+                </button>
+                <a href="#building" class="px-5 py-2.5 rounded-xl btn-secondary text-xs sm:text-sm font-medium flex items-center gap-2">
+                  <i data-lucide="clock" class="w-4 h-4 text-cyan-400"></i>
+                  <span>Learn More & Waitlist</span>
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Right Visual Mockup / Interface Card -->
+            <div class="lg:col-span-5">
+              <div class="glass-panel p-5 sm:p-6 rounded-2xl border border-white/10 relative shadow-2xl bg-slate-950/80">
+                <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
+                  <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 rounded-lg bg-gradient-to-tr from-cyan-400 to-indigo-600 flex items-center justify-center font-bold text-white text-[10px]">W</div>
+                    <span class="font-heading font-bold text-sm text-white">WYNKO Study Hub</span>
+                  </div>
+                  <span class="badge-wynkoins px-2 py-0.5 rounded-full text-[11px] font-mono font-medium flex items-center gap-1">
+                    <i data-lucide="coins" class="w-3 h-3"></i>
+                    <span>1,450 WYNKOINS</span>
+                  </span>
+                </div>
+
+                <!-- Live Timer Mockup -->
+                <div class="text-center py-6 px-4 rounded-xl bg-white/[0.02] border border-white/5 mb-4">
+                  <span class="text-[10px] font-mono text-cyan-400 uppercase tracking-widest">Deep Work Focus Room #04</span>
+                  <div class="text-4xl sm:text-5xl font-extrabold font-mono text-white tracking-wider my-2">
+                    42:18
+                  </div>
+                  <div class="flex items-center justify-center gap-2 text-xs text-emerald-400">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span>Distraction Blocker: Active (14 apps blocked)</span>
+                  </div>
+                </div>
+
+                <!-- Squad Members -->
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between text-xs text-slate-400">
+                    <span>Study Squad (4 Students Online)</span>
+                    <span class="text-cyan-400 font-mono">Streak: 7 Days 🔥</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-cyan-600/30 border border-cyan-400/30 flex items-center justify-center text-xs font-bold text-cyan-200">AS</div>
+                    <div class="w-8 h-8 rounded-full bg-violet-600/30 border border-violet-400/30 flex items-center justify-center text-xs font-bold text-violet-200">RV</div>
+                    <div class="w-8 h-8 rounded-full bg-emerald-600/30 border border-emerald-400/30 flex items-center justify-center text-xs font-bold text-emerald-200">NK</div>
+                    <div class="w-8 h-8 rounded-full bg-amber-600/30 border border-amber-400/30 flex items-center justify-center text-xs font-bold text-amber-200">PM</div>
+                    <span class="text-xs text-slate-400 ml-1">+28 in Community</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==============================================
+             PROJECT 2: NeuroPredict (AI/ML)
+             ============================================== -->
+        <div class="lg:col-span-6 glass-panel rounded-3xl p-6 sm:p-7 border border-white/10 flex flex-col justify-between project-card reveal-on-scroll" data-category="ai-ml">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-violet-500/20 text-violet-300 border border-violet-500/30 text-xs font-medium">
+                AI / Machine Learning
+              </span>
+              <span class="text-xs font-mono text-slate-500">Python • Scikit-Learn</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold font-heading text-white">
+              NeuroPredict: Student Habit & Score Analytics
+            </h3>
+            
+            <p class="mt-2.5 text-slate-300 text-sm leading-relaxed">
+              An exploratory machine learning pipeline analyzing study duration, break frequencies, and sleep habits to forecast academic performance and identify early signs of student burnout.
+            </p>
+
+            <div class="mt-4 p-3 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Model Algorithm:</span>
+                <span class="text-cyan-300 font-mono">Random Forest Regressor</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">R² Score / Accuracy:</span>
+                <span class="text-emerald-300 font-mono">88.4% on validation set</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Key Features:</span>
+                <span class="text-slate-200">Feature importance charts, Streamlit UI</span>
+              </div>
+            </div>
+
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="tag-pill">Python</span>
+              <span class="tag-pill">Pandas</span>
+              <span class="tag-pill">Scikit-Learn</span>
+              <span class="tag-pill">Matplotlib</span>
+              <span class="tag-pill">Streamlit</span>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between">
+            <button data-open-modal="modal-neuropredict" class="text-xs sm:text-sm text-cyan-300 hover:text-cyan-200 font-semibold flex items-center gap-1.5">
+              <span>Inspect Architecture</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" title="View Code on GitHub">
+              <i data-lucide="github" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ==============================================
+             PROJECT 3: PulseAI (Data Science & NLP)
+             ============================================== -->
+        <div class="lg:col-span-6 glass-panel rounded-3xl p-6 sm:p-7 border border-white/10 flex flex-col justify-between project-card reveal-on-scroll" data-category="ai-ml startup">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-medium">
+                NLP & Data Analytics
+              </span>
+              <span class="text-xs font-mono text-slate-500">Python • NLP • API</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold font-heading text-white">
+              PulseAI: Startup & Tech Sentiment Pulse
+            </h3>
+            
+            <p class="mt-2.5 text-slate-300 text-sm leading-relaxed">
+              A real-time natural language sentiment analyzer that parses developer discussion feeds and startup release notes to visualize public reception, topic clustering, and sentiment velocity.
+            </p>
+
+            <div class="mt-4 p-3 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">NLP Engine:</span>
+                <span class="text-cyan-300 font-mono">VADER & NLTK Tokenization</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Visualization:</span>
+                <span class="text-violet-300 font-mono">Interactive Plotly Dashboard</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Use Case:</span>
+                <span class="text-slate-200">Startup competitive research & market sentiment</span>
+              </div>
+            </div>
+
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="tag-pill">Python</span>
+              <span class="tag-pill">NLP</span>
+              <span class="tag-pill">Plotly</span>
+              <span class="tag-pill">Data Scraping</span>
+              <span class="tag-pill">Data Analytics</span>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between">
+            <button data-open-modal="modal-pulseai" class="text-xs sm:text-sm text-cyan-300 hover:text-cyan-200 font-semibold flex items-center gap-1.5">
+              <span>Inspect Architecture</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" title="View Code on GitHub">
+              <i data-lucide="github" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ==============================================
+             PROJECT 4: CampusFlow (Web & Tools)
+             ============================================== -->
+        <div class="lg:col-span-6 glass-panel rounded-3xl p-6 sm:p-7 border border-white/10 flex flex-col justify-between project-card reveal-on-scroll" data-category="web">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-medium">
+                Web Development & Utilities
+              </span>
+              <span class="text-xs font-mono text-slate-500">HTML5 • Tailwind • JS</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold font-heading text-white">
+              CampusFlow: B.Tech Engineering Resource Hub
+            </h3>
+            
+            <p class="mt-2.5 text-slate-300 text-sm leading-relaxed">
+              A lightning-fast, zero-friction resource indexing portal for first-year engineering students to discover curated lecture summaries, cheat sheets, code boilerplates, and lab solutions.
+            </p>
+
+            <div class="mt-4 p-3 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Architecture:</span>
+                <span class="text-emerald-300 font-mono">Modern Responsive Client Web App</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Key Features:</span>
+                <span class="text-slate-200">Instant search, offline caching, category filters</span>
+              </div>
+            </div>
+
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="tag-pill">HTML5</span>
+              <span class="tag-pill">Tailwind CSS</span>
+              <span class="tag-pill">JavaScript</span>
+              <span class="tag-pill">Responsive UX</span>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between">
+            <button data-open-modal="modal-campusflow" class="text-xs sm:text-sm text-cyan-300 hover:text-cyan-200 font-semibold flex items-center gap-1.5">
+              <span>View Details</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" title="View Code on GitHub">
+              <i data-lucide="github" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ==============================================
+             FUTURE PROJECT PLACEHOLDER CARD
+             ============================================== -->
+        <div class="lg:col-span-6 rounded-3xl p-6 sm:p-7 border-2 border-dashed border-white/15 bg-white/[0.01] flex flex-col justify-center items-center text-center project-card reveal-on-scroll hover:border-cyan-500/40 transition-colors" data-category="all">
+          <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
+            <i data-lucide="plus-circle" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-white">Your Next Breakthrough Project</h3>
+          <p class="mt-2 text-slate-400 text-xs sm:text-sm max-w-sm">
+            Space reserved for upcoming AI/ML research papers, neural network architectures, and new product releases during college.
+          </p>
+          <div class="mt-5 inline-flex items-center gap-2 text-xs font-mono text-cyan-400 bg-cyan-950/40 px-3 py-1.5 rounded-full border border-cyan-500/30">
+            <span>In Ideation & Development</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CURRENTLY BUILDING SPOTLIGHT (WYNKO)
+       ========================================================================== -->
+  <section id="building" class="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="relative rounded-3xl p-8 sm:p-12 glass-panel border border-cyan-500/30 overflow-hidden shadow-2xl shadow-cyan-950/50 reveal-on-scroll">
+        
+        <!-- Background Radials -->
+        <div class="absolute -top-32 -left-32 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-violet-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+          
+          <!-- Pulsing Status -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900 border border-cyan-400/40 text-xs sm:text-sm text-cyan-300 shadow-md">
+            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 pulse-beacon"></span>
+            <span class="font-mono uppercase tracking-wider font-semibold">Currently Building</span>
+            <span class="text-slate-600">•</span>
+            <span class="text-amber-300 font-medium">Coming Soon</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+            WYNKO — Redefining How <span class="text-gradient">Students Study & Grow</span>
+          </h2>
+
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            «A platform focused on helping students study with better focus, structure, and collaboration.»
+          </p>
+
+          <p class="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto leading-relaxed">
+            As CMO, I'm working with our team to craft an experience that solves digital fatigue, isolation, and lack of motivation. We are currently rolling out private access to select campus student cohorts.
+          </p>
+
+          <!-- Interactive Early Access Waitlist Form -->
+          <div class="pt-4 max-w-md mx-auto">
+            <form id="wynko-waitlist-form" class="flex flex-col sm:flex-row gap-2.5">
+              <input 
+                type="email" 
+                required 
+                placeholder="Enter your student email address..." 
+                class="flex-1 px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+              >
+              <button type="submit" class="px-5 py-3 rounded-xl btn-primary text-xs sm:text-sm font-semibold whitespace-nowrap flex items-center justify-center gap-2">
+                <span>Join VIP Waitlist</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </form>
+
+            <div class="mt-3 flex items-center justify-center gap-2 text-xs text-slate-400">
+              <i data-lucide="users" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Over <strong class="text-white" id="waitlist-count">480</strong> students already pre-registered!</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SKILLS SECTION
+       ========================================================================== -->
+  <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-mono mb-3">
+          <i data-lucide="wrench" class="w-3.5 h-3.5"></i>
+          <span>ARSENAL & PROFICIENCIES</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-bold font-heading tracking-tight">
+          Technical Mastery & <span class="text-gradient">Creative Execution</span>
+        </h2>
+        <p class="mt-4 text-slate-400 text-base sm:text-lg">
+          No superficial percentage bars. Just clear, practical proficiencies spanning data engineering algorithms, product marketing, and design.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Category 1: Technical (Data Science & AI/ML) -->
+        <div class="glass-panel p-7 sm:p-9 rounded-3xl border border-white/10 hover:border-cyan-500/40 transition-all reveal-on-scroll">
+          
+          <div class="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+                <i data-lucide="code" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="text-xl sm:text-2xl font-bold font-heading text-white">Technical Skills</h3>
+                <p class="text-xs text-slate-400 font-mono">Data Science & AI/ML Stack</p>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 text-xs font-mono">B.Tech Focus</span>
+          </div>
+
+          <!-- Skills Cards Grid -->
+          <div class="space-y-4">
+            
+            <!-- Skill: Data Science -->
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i data-lucide="database" class="w-4 h-4 text-cyan-400"></i>
+                  <span class="font-heading font-semibold text-white text-base">Data Science</span>
+                </div>
+                <span class="text-[11px] font-mono text-cyan-300 bg-cyan-950/40 px-2 py-0.5 rounded border border-cyan-500/30">EDA & Analytics</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-2">
+                Exploratory data analysis, handling missing values, statistical inference, feature engineering, and extracting actionable trends.
+              </p>
+            </div>
+
+            <!-- Skill: Artificial Intelligence -->
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i data-lucide="bot" class="w-4 h-4 text-violet-400"></i>
+                  <span class="font-heading font-semibold text-white text-base">Artificial Intelligence</span>
+                </div>
+                <span class="text-[11px] font-mono text-violet-300 bg-violet-950/40 px-2 py-0.5 rounded border border-violet-500/30">Foundational AI</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-2">
+                Knowledge representation, search algorithms, state space search, modern LLM prompting, and AI ethical frameworks.
+              </p>
+            </div>
+
+            <!-- Skill: Machine Learning -->
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i data-lucide="git-merge" class="w-4 h-4 text-cyan-400"></i>
+                  <span class="font-heading font-semibold text-white text-base">Machine Learning</span>
+                </div>
+                <span class="text-[11px] font-mono text-cyan-300 bg-cyan-950/40 px-2 py-0.5 rounded border border-cyan-500/30">Scikit-Learn</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-2">
+                Linear & logistic regression, decision trees, random forests, clustering techniques, hyperparameter tuning, and metric evaluation.
+              </p>
+            </div>
+
+            <!-- Skill: Python -->
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i data-lucide="terminal" class="w-4 h-4 text-amber-400"></i>
+                  <span class="font-heading font-semibold text-white text-base">Python Programming</span>
+                </div>
+                <span class="text-[11px] font-mono text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded border border-amber-500/30">Primary Language</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-2">
+                Object-oriented programming, data structures, scripting, Pandas, NumPy, Matplotlib, Seaborn, and clean API integration.
+              </p>
+            </div>
+
+            <!-- Skill: Basic Web Development -->
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i data-lucide="layout" class="w-4 h-4 text-emerald-400"></i>
+                  <span class="font-heading font-semibold text-white text-base">Basic Web Development</span>
+                </div>
+                <span class="text-[11px] font-mono text-emerald-300 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-500/30">Frontend UI</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-2">
+                Semantic HTML5, responsive CSS3/Tailwind CSS styling, vanilla JavaScript DOM manipulation, and building interactive portfolio apps.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Category 2: Creative & Professional -->
+        <div class="glass-panel p-7 sm:p-9 rounded-3xl border border-white/10 hover:border-violet-500/40 transition-all reveal-on-scroll">
+          
+          <div class="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400">
+                <i data-lucide="sparkles" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="text-xl sm:text-2xl font-bold font-heading text-white">Creative & Professional</h3>
+                <p class="text-xs text-slate-400 font-mono">Marketing, Branding & Design</p>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/20 text-xs font-mono">CMO Focus</span>
+          </div>
+
+          <!-- Skills Cards Grid -->
+          <div class="space-y-4">
+            
+            <!-- Skill: Canva & Graphic Design -->
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i data-lucide="palette" class="w-4 h-4 text-cyan-400"></i>
+                  <span class="font-heading font-semibold text-white text-base">Canva & Visual Design</span>
+                </div>
+                <span class="text-[11px] font-mono text-cyan-300 bg-cyan-950/40 px-2 py-0.5 rounded border border-cyan-500/30">Advanced</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-2">
+                Designing high-impact social media assets, marketing collateral, brand guidelines, and UI mockups with clean aesthetic balance.
+              </p>
+            </div>
+
+            <!-- Skill: Presentation Design -->
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i data-lucide="presentation" class="w-4 h-4 text-violet-400"></i>
+                  <span class="font-heading font-semibold text-white text-base">Presentation Design</span>
+                </div>
+                <span class="text-[11px] font-mono text-violet-300 bg-violet-950/40 px-2 py-0.5 rounded border border-violet-500/30">Pitch Decks</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-2">
+                Structuring compelling investor pitch decks, college competition presentations, and technical slide walkthroughs that retain attention.
+              </p>
+            </div>
+
+            <!-- Skill: Content Creation -->
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i data-lucide="video" class="w-4 h-4 text-pink-400"></i>
+                  <span class="font-heading font-semibold text-white text-base">Content Creation</span>
+                </div>
+                <span class="text-[11px] font-mono text-pink-300 bg-pink-950/40 px-2 py-0.5 rounded border border-pink-500/30">Tech Storytelling</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-2">
+                Writing educational carousels, video concepts, and developer-focused narratives that distill complex AI concepts into intuitive ideas.
+              </p>
+            </div>
+
+            <!-- Skill: Digital Marketing -->
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i data-lucide="trending-up" class="w-4 h-4 text-emerald-400"></i>
+                  <span class="font-heading font-semibold text-white text-base">Digital Marketing</span>
+                </div>
+                <span class="text-[11px] font-mono text-emerald-300 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-500/30">Growth Strategy</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-2">
+                User acquisition funnels, campus outreach campaigns, waitlist growth hacks, and organic student community building for WYNKO.
+              </p>
+            </div>
+
+            <!-- Skill: Branding & Social Media Strategy -->
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i data-lucide="share-2" class="w-4 h-4 text-blue-400"></i>
+                  <span class="font-heading font-semibold text-white text-base">Branding & Social Strategy</span>
+                </div>
+                <span class="text-[11px] font-mono text-blue-300 bg-blue-950/40 px-2 py-0.5 rounded border border-blue-500/30">Identity</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-2">
+                Crafting cohesive brand voices, social cadence, LinkedIn personal branding, and positioning early-stage digital products for scale.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MY JOURNEY TIMELINE
+       ========================================================================== -->
+  <section id="journey" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-20 reveal-on-scroll">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-mono mb-3">
+          <i data-lucide="milestone" class="w-3.5 h-3.5"></i>
+          <span>EVOLUTION</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-bold font-heading tracking-tight">
+          My <span class="text-gradient">Journey & Milestones</span>
+        </h2>
+        <p class="mt-4 text-slate-400 text-base sm:text-lg">
+          From inquisitive school days to diving deep into artificial intelligence and co-building a tech startup.
+        </p>
+      </div>
+
+      <!-- Timeline Container -->
+      <div class="relative max-w-4xl mx-auto">
+        
+        <!-- Vertical Center Stem Line -->
+        <div class="timeline-stem"></div>
+
+        <div class="space-y-12">
+          
+          <!-- Step 1: School -->
+          <div class="relative flex flex-col md:flex-row items-center gap-8 reveal-on-scroll">
+            <div class="w-full md:w-1/2 md:text-right order-2 md:order-1 pl-12 md:pl-0">
+              <span class="text-xs font-mono text-cyan-400">Foundation Years</span>
+              <h3 class="text-xl font-bold font-heading text-white mt-1">Schooling</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+                Developed an insatiable curiosity for computers, science, and creative visual expression. First encounters with logic, problem solving, and digital design.
+              </p>
+            </div>
+            
+            <div class="absolute left-2.5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-900 border-2 border-cyan-400 flex items-center justify-center text-cyan-300 z-10 shadow-lg shadow-cyan-500/20 order-1">
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+            </div>
+
+            <div class="w-full md:w-1/2 md:pl-8 order-3 pl-12 md:pl-8">
+              <span class="inline-block px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[11px] font-mono text-slate-300">
+                Curiosity & Creative Sparks
+              </span>
+            </div>
+          </div>
+
+          <!-- Step 2: Class 12 -->
+          <div class="relative flex flex-col md:flex-row items-center gap-8 reveal-on-scroll">
+            <div class="w-full md:w-1/2 md:text-right order-2 md:order-1 pl-12 md:pl-0 md:pr-8">
+              <span class="inline-block px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[11px] font-mono text-slate-300">
+                Mathematics & Analytical Depth
+              </span>
+            </div>
+            
+            <div class="absolute left-2.5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-900 border-2 border-indigo-400 flex items-center justify-center text-indigo-300 z-10 shadow-lg shadow-indigo-500/20 order-1">
+              <i data-lucide="award" class="w-4 h-4"></i>
+            </div>
+
+            <div class="w-full md:w-1/2 order-3 pl-12 md:pl-8">
+              <span class="text-xs font-mono text-indigo-400">Senior Secondary</span>
+              <h3 class="text-xl font-bold font-heading text-white mt-1">Class 12 (Science Stream)</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+                Deep dive into advanced mathematics and physics. Discovered the elegance of algorithmic thinking and chose to pursue the forefront of modern engineering.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3: B.Tech -->
+          <div class="relative flex flex-col md:flex-row items-center gap-8 reveal-on-scroll">
+            <div class="w-full md:w-1/2 md:text-right order-2 md:order-1 pl-12 md:pl-0">
+              <span class="text-xs font-mono text-cyan-400">Present • Year 1</span>
+              <h3 class="text-xl font-bold font-heading text-white mt-1">B.Tech (Data Science & AI/ML)</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+                Commenced undergraduate studies specializing in Data Science & Artificial Intelligence. Rigorous focus on Python, linear algebra, statistics, and machine learning basics.
+              </p>
+            </div>
+            
+            <div class="absolute left-2.5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-900 border-2 border-cyan-400 flex items-center justify-center text-cyan-300 z-10 shadow-lg shadow-cyan-500/30 order-1">
+              <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+            </div>
+
+            <div class="w-full md:w-1/2 order-3 pl-12 md:pl-8">
+              <span class="inline-block px-2.5 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-[11px] font-mono text-cyan-300">
+                Core Specialization Inception
+              </span>
+            </div>
+          </div>
+
+          <!-- Step 4: Projects -->
+          <div class="relative flex flex-col md:flex-row items-center gap-8 reveal-on-scroll">
+            <div class="w-full md:w-1/2 md:text-right order-2 md:order-1 pl-12 md:pl-0 md:pr-8">
+              <span class="inline-block px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[11px] font-mono text-slate-300">
+                Practical Application
+              </span>
+            </div>
+            
+            <div class="absolute left-2.5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-900 border-2 border-violet-400 flex items-center justify-center text-violet-300 z-10 shadow-lg shadow-violet-500/20 order-1">
+              <i data-lucide="cpu" class="w-4 h-4"></i>
+            </div>
+
+            <div class="w-full md:w-1/2 order-3 pl-12 md:pl-8">
+              <span class="text-xs font-mono text-violet-400">Hands-on Work</span>
+              <h3 class="text-xl font-bold font-heading text-white mt-1">Building Real Projects</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+                Moved beyond theory by writing predictive models, web utilities, and data visualization pipelines. Learning by deploying code.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 5: Startup Building -->
+          <div class="relative flex flex-col md:flex-row items-center gap-8 reveal-on-scroll">
+            <div class="w-full md:w-1/2 md:text-right order-2 md:order-1 pl-12 md:pl-0">
+              <span class="text-xs font-mono text-emerald-400">Entrepreneurial Leap</span>
+              <h3 class="text-xl font-bold font-heading text-white mt-1">Startup Building: CMO @ WYNKO</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+                Stepped into executive leadership as CMO of WYNKO. Building a dedicated study and focus ecosystem for students with gamification and community accountability.
+              </p>
+            </div>
+            
+            <div class="absolute left-2.5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-900 border-2 border-emerald-400 flex items-center justify-center text-emerald-300 z-10 shadow-lg shadow-emerald-500/30 order-1">
+              <i data-lucide="rocket" class="w-4 h-4"></i>
+            </div>
+
+            <div class="w-full md:w-1/2 order-3 pl-12 md:pl-8">
+              <span class="inline-block px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono text-emerald-300">
+                WYNKO Venture Launch
+              </span>
+            </div>
+          </div>
+
+          <!-- Step 6: Future Goals -->
+          <div class="relative flex flex-col md:flex-row items-center gap-8 reveal-on-scroll">
+            <div class="w-full md:w-1/2 md:text-right order-2 md:order-1 pl-12 md:pl-0 md:pr-8">
+              <span class="inline-block px-2.5 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-[11px] font-mono text-cyan-300">
+                Long-Term Horizon
+              </span>
+            </div>
+            
+            <div class="absolute left-2.5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 flex items-center justify-center text-white z-10 shadow-lg shadow-cyan-500/40 order-1">
+              <i data-lucide="compass" class="w-4 h-4"></i>
+            </div>
+
+            <div class="w-full md:w-1/2 order-3 pl-12 md:pl-8">
+              <span class="text-xs font-mono text-cyan-400">The Road Ahead</span>
+              <h3 class="text-xl font-bold font-heading text-white mt-1">Future Goals</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+                Scale WYNKO into a beloved global student utility, master advanced neural architectures, contribute to open-source AI, and create lasting technology ventures.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ACHIEVEMENTS / HIGHLIGHTS SECTION
+       ========================================================================== -->
+  <section id="achievements" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-mono mb-3">
+          <i data-lucide="trophy" class="w-3.5 h-3.5"></i>
+          <span>TRACK RECORD & CREDENTIALS</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-bold font-heading tracking-tight">
+          Achievements & <span class="text-gradient">Key Highlights</span>
+        </h2>
+        <p class="mt-4 text-slate-400 text-base sm:text-lg">
+          A showcase of startup leadership, certifications, events, and collegiate tech participation.
+        </p>
+      </div>
+
+      <!-- Highlights Grid (Easy to Update) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Highlight 1: Startup Leadership -->
+        <div class="glass-panel p-6 rounded-3xl border border-white/10 hover:border-cyan-500/40 transition-all reveal-on-scroll group">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-300 mb-5 group-hover:scale-105 transition-transform">
+            <i data-lucide="briefcase" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-mono text-cyan-400 uppercase tracking-wider">Startup Experience</span>
+          <h3 class="text-lg font-bold font-heading text-white mt-1">Chief Marketing Officer @ WYNKO</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+            Co-leading product architecture, marketing positioning, and student community acquisition for an innovative focus and study platform.
+          </p>
+          <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-500 font-mono">
+            <span>2024 - Present</span>
+            <span class="text-cyan-400">Leadership</span>
+          </div>
+        </div>
+
+        <!-- Highlight 2: Technical Certifications -->
+        <div class="glass-panel p-6 rounded-3xl border border-white/10 hover:border-violet-500/40 transition-all reveal-on-scroll group">
+          <div class="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-300 mb-5 group-hover:scale-105 transition-transform">
+            <i data-lucide="file-check" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-mono text-violet-400 uppercase tracking-wider">Certifications & Training</span>
+          <h3 class="text-lg font-bold font-heading text-white mt-1">AI, Data Science & Python</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+            Certified coursework in Python Programming, Data Wrangling, and Foundations of Machine Learning algorithms & models.
+          </p>
+          <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-500 font-mono">
+            <span>Verified Credentials</span>
+            <span class="text-violet-400">Technical</span>
+          </div>
+        </div>
+
+        <!-- Highlight 3: Competitions & Hackathons -->
+        <div class="glass-panel p-6 rounded-3xl border border-white/10 hover:border-emerald-500/40 transition-all reveal-on-scroll group">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-300 mb-5 group-hover:scale-105 transition-transform">
+            <i data-lucide="flag" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-mono text-emerald-400 uppercase tracking-wider">Events & Competitions</span>
+          <h3 class="text-lg font-bold font-heading text-white mt-1">Hackathons & Ideathons</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+            Active participant in collegiate hackathons, AI solution ideathons, and startup pitch competitions, pitching solutions under time constraints.
+          </p>
+          <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-500 font-mono">
+            <span>Engineering College</span>
+            <span class="text-emerald-400">Competitions</span>
+          </div>
+        </div>
+
+        <!-- Highlight 4: Creative & Visual Design -->
+        <div class="glass-panel p-6 rounded-3xl border border-white/10 hover:border-amber-500/40 transition-all reveal-on-scroll group">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-300 mb-5 group-hover:scale-105 transition-transform">
+            <i data-lucide="sparkle" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-mono text-amber-400 uppercase tracking-wider">Design & Media</span>
+          <h3 class="text-lg font-bold font-heading text-white mt-1">Canva & Pitch Deck Specialist</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+            Designed 30+ visual creatives, presentation decks, and brand identity materials with modern typography and sleek aesthetics.
+          </p>
+          <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-500 font-mono">
+            <span>Portfolio Designs</span>
+            <span class="text-amber-400">Creative</span>
+          </div>
+        </div>
+
+        <!-- Highlight 5: Community & Leadership -->
+        <div class="glass-panel p-6 rounded-3xl border border-white/10 hover:border-pink-500/40 transition-all reveal-on-scroll group">
+          <div class="w-12 h-12 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-300 mb-5 group-hover:scale-105 transition-transform">
+            <i data-lucide="users-2" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-mono text-pink-400 uppercase tracking-wider">Community Building</span>
+          <h3 class="text-lg font-bold font-heading text-white mt-1">Student Tech Mentorship</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+            Active in organizing study groups, assisting peers with Python troubleshooting, and fostering an environment of collaborative learning.
+          </p>
+          <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-500 font-mono">
+            <span>Campus Network</span>
+            <span class="text-pink-400">Collaboration</span>
+          </div>
+        </div>
+
+        <!-- Highlight 6: Continuous Learning Card -->
+        <div class="glass-panel p-6 rounded-3xl border border-white/10 hover:border-cyan-500/40 transition-all reveal-on-scroll group">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-300 mb-5 group-hover:scale-105 transition-transform">
+            <i data-lucide="book-marked" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-mono text-cyan-400 uppercase tracking-wider">Lifelong Pursuit</span>
+          <h3 class="text-lg font-bold font-heading text-white mt-1">Deep Learning & LLM Systems</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+            Currently advancing into PyTorch, transformer architectures, and building production-ready AI applications for real-world utility.
+          </p>
+          <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-500 font-mono">
+            <span>Active Study</span>
+            <span class="text-cyan-400">Exploration</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT SECTION
+       ========================================================================== -->
+  <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-mono mb-3">
+          <i data-lucide="send" class="w-3.5 h-3.5"></i>
+          <span>START A CONVERSATION</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-bold font-heading tracking-tight">
+          Let's Build <span class="text-gradient">Something Remarkable</span>
+        </h2>
+        <p class="mt-4 text-slate-400 text-base sm:text-lg">
+          Have an idea, project, or opportunity? Let's connect. Whether it's Data Science, AI/ML, startup collaboration, or marketing strategy.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- Left: Contact Details & Channels -->
+        <div class="lg:col-span-5 space-y-6 reveal-on-scroll">
+          
+          <div class="glass-panel p-7 rounded-3xl border border-white/10 space-y-6">
+            <h3 class="text-xl font-bold font-heading text-white">Direct Connect Channels</h3>
+            
+            <!-- LinkedIn Card (Primary from user) -->
+            <a href="https://www.linkedin.com/in/adarsh-singh-a04066251" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-cyan-500/40 flex items-center justify-between group transition-all">
+              <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                  <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 font-mono">LinkedIn Profile</div>
+                  <div class="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors">adarsh-singh-a04066251</div>
+                </div>
+              </div>
+              <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-cyan-300 transition-colors"></i>
+            </a>
+
+            <!-- Email Card with Copy Button -->
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-between group">
+              <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 font-mono">Personal Email</div>
+                  <div class="text-sm font-semibold text-white">adarsh.singh.tech@gmail.com</div>
+                </div>
+              </div>
+              <button id="copy-email-btn" data-email="adarsh.singh.tech@gmail.com" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors" title="Copy Email">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- GitHub Card -->
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-violet-500/40 flex items-center justify-between group transition-all">
+              <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 group-hover:scale-110 transition-transform">
+                  <i data-lucide="github" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 font-mono">GitHub Repositories</div>
+                  <div class="text-sm font-semibold text-white group-hover:text-violet-300 transition-colors">adarshsingh-dev</div>
+                </div>
+              </div>
+              <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-violet-300 transition-colors"></i>
+            </a>
+
+            <!-- Location & Availability -->
+            <div class="pt-2 text-xs text-slate-400 space-y-2 font-mono">
+              <div class="flex items-center gap-2">
+                <i data-lucide="map-pin" class="w-4 h-4 text-cyan-400"></i>
+                <span>Location: India (Open to Remote / Global Work)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="clock" class="w-4 h-4 text-emerald-400"></i>
+                <span>Response Time: Typically within 24 hours</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="lg:col-span-7 reveal-on-scroll">
+          <div class="glass-panel p-7 sm:p-9 rounded-3xl border border-white/10">
+            <h3 class="text-2xl font-bold font-heading text-white mb-2">Send a Direct Message</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mb-6">
+              Drop your details below and I'll get back to you as soon as possible.
+            </p>
+
+            <form id="contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label for="form-name" class="text-xs font-mono text-slate-300">Your Name *</label>
+                  <input 
+                    type="text" 
+                    id="form-name" 
+                    required 
+                    placeholder="e.g. Alex Morgan" 
+                    class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                  >
+                </div>
+                <div class="space-y-1.5">
+                  <label for="form-email" class="text-xs font-mono text-slate-300">Your Email Address *</label>
+                  <input 
+                    type="email" 
+                    id="form-email" 
+                    required 
+                    placeholder="e.g. alex@example.com" 
+                    class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                  >
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="form-subject" class="text-xs font-mono text-slate-300">Subject / Nature of Opportunity</label>
+                <select 
+                  id="form-subject" 
+                  class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                >
+                  <option value="Startup Collaboration / WYNKO">Startup Collaboration / WYNKO</option>
+                  <option value="Data Science & AI Project">Data Science & AI Project</option>
+                  <option value="Internship or Tech Role">Internship or Tech Opportunity</option>
+                  <option value="Creative & Marketing Strategy">Creative & Marketing Strategy</option>
+                  <option value="General Networking">Just Saying Hi / Networking</option>
+                </select>
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="form-message" class="text-xs font-mono text-slate-300">Your Message *</label>
+                <textarea 
+                  id="form-message" 
+                  rows="4" 
+                  required 
+                  placeholder="Share details about what you're working on, an opportunity, or any questions..." 
+                  class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                class="w-full py-3.5 rounded-xl btn-primary font-semibold text-sm flex items-center justify-center gap-2 group"
+              >
+                <span>Send Message</span>
+                <i data-lucide="send" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative z-10 bg-slate-950/80">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-indigo-600 flex items-center justify-center font-heading font-bold text-white text-sm">
+          AS
+        </div>
+        <div>
+          <div class="font-heading font-bold text-white text-sm">Adarsh Singh</div>
+          <div class="text-[11px] text-slate-500 font-mono">B.Tech Data Science & AI/ML Undergrad</div>
+        </div>
+      </div>
+
+      <div class="text-xs text-slate-400 text-center">
+        © <span id="current-year">2026</span> Adarsh Singh. Designed & Built for the Future.
+      </div>
+
+      <!-- Quick Back to Hero & Social Links -->
+      <div class="flex items-center gap-4">
+        <a href="https://www.linkedin.com/in/adarsh-singh-a04066251" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-cyan-400 transition-colors" title="LinkedIn">
+          <i data-lucide="linkedin" class="w-4 h-4"></i>
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-cyan-400 transition-colors" title="GitHub">
+          <i data-lucide="github" class="w-4 h-4"></i>
+        </a>
+        <a href="mailto:adarsh.singh.tech@gmail.com" class="text-slate-400 hover:text-cyan-400 transition-colors" title="Email">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS SYSTEM (WYNKO DEEP DIVE & OTHER PROJECTS)
+       ========================================================================== -->
+  <!-- WYNKO Modal -->
+  <div id="modal-wynko" class="portfolio-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="glass-panel w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl p-6 sm:p-8 border border-cyan-500/40 relative shadow-2xl bg-slate-950/95">
+      
+      <button data-close-modal class="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="space-y-6">
+        
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-400 to-indigo-600 flex items-center justify-center font-bold text-white text-xl font-heading">
+            W
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold font-heading text-white">WYNKO Deep Dive</h3>
+            <p class="text-xs text-cyan-400 font-mono">Focus • Study • Together</p>
+          </div>
+        </div>
+
+        <p class="text-slate-300 text-sm leading-relaxed">
+          WYNKO was created out of a personal frustration experienced by modern students: endless digital distraction, isolated study sessions, and lack of real accountability. WYNKO bridges gamified focus mechanisms with a social accountability layer.
+        </p>
+
+        <!-- Detailed Features Breakdown -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-mono uppercase tracking-wider text-slate-300">Key Platform Capabilities</h4>
+          
+          <div class="space-y-2 text-xs sm:text-sm text-slate-300">
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
+              <strong class="text-cyan-300">1. Focus Sessions:</strong> Customizable Pomodoro intervals and flow states with ambient binaural audio generators.
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
+              <strong class="text-rose-300">2. App Blocking:</strong> Intelligent friction blocks distracting social media apps and browser tabs during active study clocks.
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
+              <strong class="text-violet-300">3. Group Study:</strong> Virtual synchronized silent focus rooms with cameras/screen presence or avatar study squads.
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
+              <strong class="text-emerald-300">4. Study Challenges:</strong> Daily quests, subject marathons, and collegiate leaderboard sprints.
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
+              <strong class="text-blue-300">5. Study Communities:</strong> Niche topic channels (Data Science, Math, Engineering) for peer review and shared study decks.
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
+              <strong class="text-amber-300">6. Rewards / WYNKOINS:</strong> Students earn in-app WYNKOINS for verified focus hours, redeemable for study perks and partner vouchers.
+            </div>
+          </div>
+        </div>
+
+        <!-- Role of Adarsh -->
+        <div class="p-4 rounded-2xl bg-cyan-950/30 border border-cyan-500/30">
+          <h4 class="text-xs font-mono uppercase text-cyan-300 font-semibold mb-1">Adarsh Singh's Role: CMO</h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Leading the go-to-market playbook, managing social presence, establishing student campus ambassadorships, and crafting high-converting visual branding for prospective students.
+          </p>
+        </div>
+
+        <!-- Modal CTA -->
+        <div class="pt-2 flex items-center justify-end gap-3">
+          <button data-close-modal class="px-4 py-2 rounded-xl text-xs font-medium text-slate-400 hover:text-white">
+            Close
+          </button>
+          <a href="#building" data-close-modal class="px-5 py-2.5 rounded-xl btn-primary text-xs font-semibold">
+            Join Early Waitlist
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NeuroPredict Modal -->
+  <div id="modal-neuropredict" class="portfolio-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="glass-panel w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl p-6 sm:p-8 border border-violet-500/40 relative shadow-2xl bg-slate-950/95">
+      <button data-close-modal class="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="space-y-5">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-violet-500/20 border border-violet-500/30 flex items-center justify-center text-violet-300">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold font-heading text-white">NeuroPredict Architecture</h3>
+            <p class="text-xs text-violet-400 font-mono">Python • Machine Learning • Data Analytics</p>
+          </div>
+        </div>
+
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          NeuroPredict operates on student lifestyle and study tracking telemetry. It performs data cleaning, one-hot encoding on qualitative variables, and feeds standardized feature arrays into a Random Forest Regressor and Gradient Boosting model.
+        </p>
+
+        <div class="space-y-2 text-xs font-mono bg-slate-900 p-4 rounded-xl border border-white/5 text-slate-300">
+          <div>$ python -m venv env && source env/bin/activate</div>
+          <div class="text-emerald-400">✓ Libraries: numpy, pandas, scikit-learn, streamlit</div>
+          <div class="text-cyan-400">✓ Cross-validation MAE: 3.42 points</div>
+          <div class="text-violet-400">✓ Deployed locally on Streamlit Server</div>
+        </div>
+
+        <button data-close-modal class="w-full py-2.5 rounded-xl btn-secondary text-xs font-semibold">
+          Dismiss
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PulseAI Modal -->
+  <div id="modal-pulseai" class="portfolio-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="glass-panel w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl p-6 sm:p-8 border border-cyan-500/40 relative shadow-2xl bg-slate-950/95">
+      <button data-close-modal class="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="space-y-5">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-300">
+            <i data-lucide="trending-up" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold font-heading text-white">PulseAI Architecture</h3>
+            <p class="text-xs text-cyan-400 font-mono">NLP • Sentiment Pipeline • Plotly</p>
+          </div>
+        </div>
+
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          PulseAI scrapes community feedback across tech forums, runs polarity scoring using NLTK VADER sentiment dictionaries, and visualizes sentiment trends to help founders gauge reception.
+        </p>
+
+        <button data-close-modal class="w-full py-2.5 rounded-xl btn-secondary text-xs font-semibold">
+          Dismiss
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CampusFlow Modal -->
+  <div id="modal-campusflow" class="portfolio-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="glass-panel w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl p-6 sm:p-8 border border-emerald-500/40 relative shadow-2xl bg-slate-950/95">
+      <button data-close-modal class="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="space-y-5">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-300">
+            <i data-lucide="layout" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold font-heading text-white">CampusFlow Overview</h3>
+            <p class="text-xs text-emerald-400 font-mono">HTML5 • Tailwind • Client-side Indexing</p>
+          </div>
+        </div>
+
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Designed for B.Tech classmates to access lab manuals, syllabus checklists, and curated cheat sheets without traversing clunky university portals.
+        </p>
+
+        <button data-close-modal class="w-full py-2.5 rounded-xl btn-secondary text-xs font-semibold">
+          Dismiss
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-6 left-6 z-40 p-3 rounded-2xl glass-panel border border-cyan-500/30 text-cyan-300 hover:text-white hover:border-cyan-400 shadow-xl transition-all" aria-label="Scroll back to top">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
